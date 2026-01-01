@@ -9,11 +9,15 @@
 # Configuración de WordPress (contiene credenciales de BD)
 wp-config.php
 
-# Base de datos - NUNCA subir dumps de BD
-DB/
-*.sql
+# Base de datos - NUNCA subir dumps de BD completos
+# Pero permitimos scripts SQL de configuración (sin datos sensibles)
+DB/*.dump
+DB/*backup*.sql
+DB/*export*.sql
 *.sql.gz
-*.dump
+
+# Permitir scripts SQL específicos de configuración
+!DB/amparomedium_*.sql
 
 # Archivos de entorno
 .env

@@ -985,12 +985,50 @@ label {
    ========================================================================== */
 
 /* Kadence header */
+.site-header,
+.site-header-row,
+header.site-header {
+    background: rgba(15, 10, 31, 0.95) !important;
+    backdrop-filter: blur(10px);
+}
+
 .site-header-row {
     background: transparent;
 }
 
 .header-desktop-inner-wrap {
     padding: 0.5rem 0;
+}
+
+/* Header transparente en páginas con hero */
+.kadence-transparent-header .site-header,
+.transparent-header .site-header,
+body.transparent-header header.site-header {
+    background: transparent !important;
+}
+
+.kadence-transparent-header .site-header.header-scrolled,
+.transparent-header .site-header.header-scrolled {
+    background: rgba(15, 10, 31, 0.95) !important;
+}
+
+/* Logo en header */
+.site-branding .custom-logo,
+.site-branding img {
+    max-height: 50px !important;
+}
+
+/* Menú de navegación Kadence */
+.header-navigation .menu > li > a,
+.primary-menu > li > a,
+.navigation .menu > li > a {
+    color: #ffffff !important;
+    font-weight: 500;
+}
+
+.header-navigation .menu > li > a:hover,
+.primary-menu > li > a:hover {
+    color: var(--am-primary-light) !important;
 }
 
 /* Kadence buttons */
@@ -1013,6 +1051,124 @@ label {
 
 .wp-block-kadence-column {
     background-color: transparent;
+}
+
+/* ==========================================================================
+   GUTENBERG BLOCKS OVERRIDES - SERVICIOS Y PRODUCTOS
+   ========================================================================== */
+
+/* Tarjetas de servicios - columnas con clase am-card */
+.wp-block-column.am-card,
+.am-service-card,
+.am-product-card {
+    padding: 2rem !important;
+    border: 1px solid rgba(147, 51, 234, 0.3) !important;
+    border-radius: 16px !important;
+    background: rgba(15, 10, 31, 0.8) !important;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease !important;
+    margin-bottom: 1rem;
+}
+
+.wp-block-column.am-card:hover,
+.am-service-card:hover,
+.am-product-card:hover {
+    border-color: var(--am-primary) !important;
+    transform: translateY(-8px) !important;
+    box-shadow: 0 15px 40px rgba(147, 51, 234, 0.4) !important;
+}
+
+/* Iconos/emojis en tarjetas */
+.am-card p:first-child,
+.am-service-card p:first-child {
+    transition: transform 0.3s ease;
+}
+
+.am-card:hover p:first-child,
+.am-service-card:hover p:first-child {
+    transform: scale(1.1);
+}
+
+/* Botones outline en tarjetas */
+.am-card .wp-block-button.is-style-outline .wp-block-button__link,
+.am-service-card .wp-block-button.is-style-outline .wp-block-button__link,
+.am-product-card .wp-block-button.is-style-outline .wp-block-button__link {
+    border: 2px solid var(--am-primary) !important;
+    color: var(--am-primary) !important;
+    background: transparent !important;
+}
+
+.am-card .wp-block-button.is-style-outline .wp-block-button__link:hover,
+.am-service-card .wp-block-button.is-style-outline .wp-block-button__link:hover,
+.am-product-card .wp-block-button.is-style-outline .wp-block-button__link:hover {
+    background: var(--am-primary) !important;
+    color: #ffffff !important;
+}
+
+/* Sección Hero con Cover */
+.wp-block-cover.am-hero-section,
+.am-hero-section {
+    background-color: #0f0a1f !important;
+}
+
+.wp-block-cover.am-hero-section .wp-block-cover__background {
+    background-color: #0f0a1f !important;
+}
+
+/* Sección servicios rápidos */
+.am-servicios-rapidos {
+    background-color: #0f0a1f !important;
+}
+
+/* Sección about */
+.am-about-section {
+    background: linear-gradient(135deg, #0f0a1f 0%, #1a0f2e 100%) !important;
+}
+
+/* Sección membresía */
+.am-membership-section {
+    background: linear-gradient(135deg, #1a0f2e 0%, #9333ea 100%) !important;
+}
+
+/* Sección productos */
+.am-productos-section {
+    background-color: #0f0a1f !important;
+}
+
+/* Sección CTA */
+.am-cta-section {
+    background: linear-gradient(135deg, #9333ea 0%, #7c3aed 100%) !important;
+}
+
+/* Lista con checks */
+.am-benefits-list li,
+.am-icon-list li {
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+/* Botón principal púrpura */
+.wp-block-button:not(.is-style-outline) .wp-block-button__link {
+    background: linear-gradient(135deg, #9333ea 0%, #7c3aed 100%) !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease;
+}
+
+.wp-block-button:not(.is-style-outline) .wp-block-button__link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(147, 51, 234, 0.4);
+}
+
+/* Botón outline */
+.wp-block-button.is-style-outline .wp-block-button__link {
+    border: 2px solid #9333ea !important;
+    color: #9333ea !important;
+    border-radius: 8px !important;
+}
+
+.wp-block-button.is-style-outline .wp-block-button__link:hover {
+    background: #9333ea !important;
+    color: #ffffff !important;
 }
 
 /* ==========================================================================
