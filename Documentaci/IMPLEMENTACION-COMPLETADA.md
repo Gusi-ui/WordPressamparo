@@ -3,14 +3,21 @@
 ## 📋 Resumen de Cambios Realizados
 
 ### Fecha: Enero 2026
-### Versión: 1.0
+### Versión: 2.0
+
+---
+
+## 🎨 TEMA ACTIVO
+
+**Tema Padre:** Kadence Theme
+**Tema Hijo:** AmparoMédium - Kadence Child
 
 ---
 
 ## 🎨 ARCHIVOS CREADOS/MODIFICADOS
 
 ### 1. CSS Personalizado AmparoMédium
-**Archivo:** `wp-content/themes/educate-training-coach/assets/css/amparomedium-custom.css`
+**Archivo:** `wp-content/themes/amparomedium-kadence-child/style.css`
 
 **Características incluidas:**
 - Variables CSS globales con la paleta de colores de AmparoMédium
@@ -26,11 +33,11 @@
 - Botón de WhatsApp estilizado
 - Badges y elementos decorativos
 
-### 2. Functions.php Mejorado
-**Archivo:** `wp-content/themes/educate-training-coach/functions.php`
+### 2. Functions.php del Tema Hijo
+**Archivo:** `wp-content/themes/amparomedium-kadence-child/functions.php`
 
 **Nuevas funcionalidades:**
-- Carga automática de Google Fonts (Inter)
+- Carga automática de estilos del tema padre
 - Carga de Font Awesome 6
 - Body classes para páginas de AmparoMédium
 - Shortcodes personalizados:
@@ -39,22 +46,30 @@
   - `[am_testimonial]` - Testimonio con avatar
   - `[am_badge]` - Badge/etiqueta
   - `[am_price]` - Tarjeta de precios
-- Widget area para CTA
+- Script para header scroll effect
+- Botón "Back to Top"
+
+### 3. JavaScript Principal
+**Archivo:** `wp-content/themes/amparomedium-kadence-child/assets/js/main.js`
+
+**Funcionalidades:**
+- Efecto de scroll en el header
+- Botón de volver arriba animado
 
 ---
 
 ## 🎯 PALETA DE COLORES
 
 ```css
---am-primary: #9333ea        /* Púrpura principal */
---am-primary-dark: #7c3aed   /* Púrpura oscuro */
---am-primary-light: #a855f7  /* Púrpura claro */
---am-background: #0f0a1f     /* Fondo oscuro */
---am-background-alt: #1a0f2e /* Fondo alternativo */
---am-text: #ffffff           /* Texto blanco */
---am-text-muted: #a8a29e     /* Texto secundario */
---am-accent: #fbbf24         /* Dorado/acento */
---am-success: #22c55e        /* Verde éxito */
+--primary: #9333ea        /* Púrpura principal */
+--primary-dark: #7c3aed   /* Púrpura oscuro */
+--primary-light: #a855f7  /* Púrpura claro */
+--background: #0f0a1f     /* Fondo oscuro */
+--background-alt: #1a0f2e /* Fondo alternativo */
+--text: #ffffff           /* Texto blanco */
+--text-muted: #a8a29e     /* Texto secundario */
+--accent: #fbbf24         /* Dorado/acento */
+--success: #22c55e        /* Verde éxito */
 ```
 
 ---
@@ -99,7 +114,8 @@ Texto del testimonio aquí...
 
 ### Paso 1: Verificar Tema Activo
 1. Ir a `Apariencia > Temas`
-2. Confirmar que "Educate Training Coach" está activo
+2. Confirmar que **"AmparoMédium - Kadence Child"** está activo
+3. Verificar que el tema padre **Kadence** esté instalado
 
 ### Paso 2: Crear Páginas en WordPress
 Crear las siguientes páginas:
@@ -125,26 +141,20 @@ Páginas de servicios específicos:
    - Reservas
    - Mi Cuenta
 
-### Paso 4: Editar Home con Elementor
+### Paso 4: Editar Home con el Editor de Bloques o Elementor
 1. Ir a la página de Inicio
-2. Click en "Editar con Elementor"
-3. Configurar Layout: Elementor Canvas
-4. Seguir la guía `guia-home-amparomedium-elementor.md`
+2. Usar el editor de bloques de Kadence o Elementor
+3. Seguir la guía `IMPLEMENTACION-HOME.md`
 
-### Paso 5: Aplicar CSS en Elementor
-1. En Elementor > Configuración del Sitio > CSS Personalizado
-2. Copiar el contenido de `styles-amparomedium.css`
-3. O usar las clases CSS del archivo `amparomedium-custom.css`
-
-### Paso 6: Configurar Colores Globales en Elementor
-1. Ir a Elementor > Configuración del Sitio > Colores Globales
+### Paso 5: Configurar Colores Globales en Kadence
+1. Ir a `Apariencia > Personalizar > Colores`
 2. Configurar:
    - Primary: #9333ea
    - Secondary: #7c3aed
-   - Text: #ffffff
+   - Background: #0f0a1f
    - Accent: #fbbf24
 
-### Paso 7: Subir Imágenes
+### Paso 6: Subir Imágenes
 Subir a la biblioteca de medios:
 - `logo.jpg` - Logo de AmparoMédium
 - `flordeloto.png` - Imagen de flor de loto
@@ -152,7 +162,7 @@ Subir a la biblioteca de medios:
 - Imágenes de productos
 - `loto.png` - Icono para footer
 
-### Paso 8: Configurar SEO (Yoast)
+### Paso 7: Configurar SEO (Yoast)
 1. Ir a SEO > Ajustes Generales
 2. Configurar:
    - Título: AmparoMédium | Registros Akáshicos, Canalización y Videncia
@@ -163,24 +173,21 @@ Subir a la biblioteca de medios:
 
 ## 📱 CLASES CSS IMPORTANTES
 
-### Para usar en Elementor (Avanzado > CSS Classes):
+### Para usar en Kadence/Elementor (Avanzado > CSS Classes):
 
 | Clase | Descripción |
 |-------|-------------|
-| `am-hero-section` | Sección Hero principal |
-| `am-servicios-rapidos` | Grid de servicios |
-| `am-sobre-amparo` | Sección About |
-| `am-membresia-section` | Sección de membresía |
-| `am-productos-destacados` | Grid de productos |
-| `am-testimonios-section` | Sección de testimonios |
-| `am-cta-final` | Call-to-action final |
-| `am-footer-section` | Footer |
-| `am-card` | Tarjeta con efecto hover |
-| `am-btn-primary` | Botón púrpura |
-| `am-btn-outline` | Botón con borde |
-| `am-btn-gold` | Botón dorado |
-| `am-badge` | Badge/etiqueta |
-| `am-animate-fade-in-up` | Animación entrada |
+| `hero-section` | Sección Hero principal |
+| `services-section` | Grid de servicios |
+| `about-section` | Sección About |
+| `membership-section` | Sección de membresía |
+| `products-section` | Grid de productos |
+| `testimonials-section` | Sección de testimonios |
+| `cta-section` | Call-to-action final |
+| `footer-section` | Footer |
+| `service-card` | Tarjeta con efecto hover |
+| `animate-fade-in-up` | Animación entrada |
+| `animate-pulse` | Animación pulso |
 
 ---
 
@@ -216,7 +223,7 @@ https://wa.me/34686181845?text=Hola%2C%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s
 - [ ] Sistema de reservas instalado (si aplica)
 
 ### Diseño
-- [ ] Home completa en Elementor
+- [ ] Home completa
 - [ ] CSS aplicado correctamente
 - [ ] Imágenes optimizadas y subidas
 - [ ] Responsive verificado (móvil, tablet, desktop)
@@ -244,26 +251,25 @@ https://wa.me/34686181845?text=Hola%2C%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s
 
 ---
 
-## 📦 ESTRUCTURA DE ARCHIVOS
+## 📦 ESTRUCTURA DE ARCHIVOS DEL TEMA HIJO
 
 ```
-wp-content/themes/educate-training-coach/
+wp-content/themes/amparomedium-kadence-child/
 ├── assets/
-│   └── css/
-│       ├── blocks.css
-│       ├── customizer.css
-│       ├── custom-controls.css
-│       └── amparomedium-custom.css  ← NUEVO
-├── functions.php  ← MODIFICADO
+│   └── js/
+│       └── main.js
+├── functions.php
 ├── style.css
-└── ...
+├── screenshot.svg
+└── README.md
 
 Documentaci/
 ├── checklist-recursos-amparomedium.md
 ├── guia-home-amparomedium-elementor.md
 ├── guia-rapida-implementacion.md
 ├── styles-amparomedium.css
-└── IMPLEMENTACION-COMPLETADA.md  ← NUEVO
+├── IMPLEMENTACION-HOME.md
+└── IMPLEMENTACION-COMPLETADA.md
 ```
 
 ---
@@ -281,5 +287,6 @@ Documentaci/
 
 **Última actualización:** Enero 2026
 **Desarrollado para:** AmparoMédium
-**Compatibilidad:** WordPress 6.x + Elementor Free 3.x
+**Tema:** Kadence + AmparoMédium Kadence Child
+**Compatibilidad:** WordPress 6.x + Elementor Free 3.x (opcional)
 

@@ -1,24 +1,35 @@
 # GUÍA RÁPIDA: Implementación Paso a Paso
-## Home AmparoMédium en WordPress + Elementor Free
+## Home AmparoMédium en WordPress + Kadence + Elementor Free
+
+---
+
+## 🎯 TEMA ACTIVO
+
+- **Tema Padre:** Kadence Theme
+- **Tema Hijo:** AmparoMédium - Kadence Child
+
+> **Nota:** El tema hijo ya incluye todos los estilos CSS personalizados necesarios.
 
 ---
 
 ## 🎯 FASE 1: PREPARACIÓN (30 minutos)
 
-### Paso 1.1: Instalar WordPress
+### Paso 1.1: Verificar Temas
 ```
-1. Acceder a tu hosting
-2. Instalar WordPress desde el panel de control
-3. Configurar dominio y SSL
-4. Acceder al admin: tudominio.com/wp-admin
+1. Ir a Apariencia > Temas
+2. Verificar que "AmparoMédium - Kadence Child" está activo
+3. Verificar que "Kadence" (tema padre) está instalado
 ```
 
-### Paso 1.2: Instalar Elementor
+### Paso 1.2: Instalar Elementor (Opcional)
 ```
 1. Ir a Plugins > Añadir nuevo
 2. Buscar "Elementor"
 3. Instalar y Activar
 4. Saltar el wizard de configuración (por ahora)
+
+Nota: También puedes usar el editor de bloques de Kadence
+que ya viene incluido y no requiere plugins adicionales.
 ```
 
 ### Paso 1.3: Preparar Recursos
@@ -630,4 +641,5 @@ Delete: Eliminar elemento seleccionado
 
 **Tiempo estimado total:** 3-4 horas
 **Dificultad:** Intermedia
-**Herramientas necesarias:** WordPress + Elementor Free
+**Tema:** Kadence + AmparoMédium Kadence Child
+**Herramientas:** WordPress + Editor de Bloques Kadence o Elementor Free (opcional)

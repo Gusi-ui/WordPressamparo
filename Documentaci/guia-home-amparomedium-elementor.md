@@ -9,10 +9,19 @@
 
 ---
 
+## 🎯 Tema Activo
+
+- **Tema Padre:** Kadence Theme
+- **Tema Hijo:** AmparoMédium - Kadence Child
+
+> **Nota:** El tema hijo ya incluye todos los estilos CSS personalizados. Los estilos de esta guía son complementarios para Elementor.
+
+---
+
 ## 🎯 Preparación Inicial
 
 ### Plugins Necesarios
-- **Elementor** (versión Free)
+- **Elementor** (versión Free) - Opcional, también puedes usar el editor de bloques de Kadence
 - **ElementsKit Lite** (opcional, para efectos adicionales)
 - **Happy Elementor Addons** (opcional, para widgets extras)
 
@@ -812,6 +821,7 @@ Para cada widget, usar las opciones responsivas de Elementor:
 ---
 
 **Creado para:** AmparoMédium
-**Versión:** 1.0
-**Fecha:** Enero 2025
-**Compatible con:** WordPress 6.x + Elementor Free 3.x
+**Versión:** 2.0
+**Fecha:** Enero 2026
+**Tema:** Kadence + AmparoMédium Kadence Child
+**Compatible con:** WordPress 6.x + Elementor Free 3.x (opcional)
