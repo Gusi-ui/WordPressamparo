@@ -1,0 +1,210 @@
+# ==============================================================================
+# .gitignore para AmparoMédium WordPress
+# ==============================================================================
+
+# ==============================================================================
+# ARCHIVOS SENSIBLES - NUNCA SUBIR
+# ==============================================================================
+
+# Configuración de WordPress (contiene credenciales de BD)
+wp-config.php
+
+# Base de datos - NUNCA subir dumps de BD
+DB/
+*.sql
+*.sql.gz
+*.dump
+
+# Archivos de entorno
+.env
+.env.*
+*.env
+
+# ==============================================================================
+# CORE DE WORDPRESS - No es necesario versionar (se instala via WP)
+# ==============================================================================
+
+# Archivos del core de WordPress (raíz)
+/wp-admin/
+/wp-includes/
+/index.php
+/license.txt
+/readme.html
+/wp-activate.php
+/wp-blog-header.php
+/wp-comments-post.php
+/wp-config-sample.php
+/wp-cron.php
+/wp-links-opml.php
+/wp-load.php
+/wp-login.php
+/wp-mail.php
+/wp-settings.php
+/wp-signup.php
+/wp-trackback.php
+/xmlrpc.php
+
+# ==============================================================================
+# WP-CONTENT - Selectivo
+# ==============================================================================
+
+# Uploads (archivos subidos por usuarios - muy pesados)
+wp-content/uploads/
+wp-content/upgrade/
+wp-content/backup*/
+wp-content/cache/
+wp-content/w3tc-config/
+
+# Plugins (se instalan desde WP o Composer)
+wp-content/plugins/
+
+# Idiomas/Traducciones (se instalan desde WP)
+wp-content/languages/
+
+# Must-use plugins
+wp-content/mu-plugins/
+
+# Backups de WPVivid y otros
+wp-content/wpvividbackups/
+wp-content/wpvivid_staging/
+wp-content/ai1wm-backups/
+
+# Configuraciones de hosting/plugins
+wp-content/sg_wizard_themes_data.json
+wp-content/sgo-config.php
+wp-content/*.json
+
+# Temas que NO son nuestros (vienen con WP o se instalan)
+wp-content/themes/twentytwenty/
+wp-content/themes/twentytwentyone/
+wp-content/themes/twentytwentytwo/
+wp-content/themes/twentytwentythree/
+wp-content/themes/twentytwentyfour/
+wp-content/themes/twentytwentyfive/
+wp-content/themes/kadence/
+
+# Temas anteriores que ya no usamos
+wp-content/themes/educate-training-coach/
+wp-content/themes/education-insight/
+
+# Index de seguridad
+wp-content/index.php
+wp-content/themes/index.php
+
+# ==============================================================================
+# LOGS Y ARCHIVOS TEMPORALES
+# ==============================================================================
+
+# Logs de errores
+*.log
+php_errorlog
+error_log
+debug.log
+wp-content/debug.log
+
+# Archivos temporales
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# ==============================================================================
+# SISTEMA OPERATIVO
+# ==============================================================================
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# ==============================================================================
+# IDE Y EDITORES
+# ==============================================================================
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Cursor
+.cursor/
+
+# JetBrains (PhpStorm, WebStorm, etc.)
+.idea/
+*.iml
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+Session.vim
+
+# ==============================================================================
+# NODE / NPM (si usas build tools)
+# ==============================================================================
+
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# ==============================================================================
+# COMPOSER (si usas PHP dependencies)
+# ==============================================================================
+
+vendor/
+composer.lock
+
+# ==============================================================================
+# ARCHIVOS DE BUILD
+# ==============================================================================
+
+dist/
+build/
+*.min.js.map
+*.min.css.map
+
+# ==============================================================================
+# ARCHIVOS ESPECÍFICOS DEL PROYECTO
+# ==============================================================================
+
+# Archivos PHP sospechosos o de hackeo
+a2763a.php
+*.suspected
+
+# Backups locales
+*.bak
+*.backup
+*.old
+*.zip
+
+# Archivos HTML estáticos de prueba
+Default.html
+
+# ==============================================================================
+# ARCHIVOS QUE SÍ SE DEBEN INCLUIR (referencia)
+# ==============================================================================
+
+# ✅ SÍ INCLUIR:
+# - wp-content/themes/amparomedium-kadence-child/ (nuestro tema hijo)
+# - Documentaci/ (documentación del proyecto)
+# - llms.txt (archivo de configuración)
+# - .gitignore (este archivo)
+# - README.md (si existe)
+

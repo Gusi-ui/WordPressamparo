@@ -1,0 +1,1111 @@
+/*
+ Theme Name:   AmparoMédium - Kadence Child
+ Theme URI:    https://amparomedium.com
+ Description:  Tema hijo de Kadence personalizado para AmparoMédium - Servicios espirituales de Registros Akáshicos, Canalización y Videncia
+ Author:       AmparoMédium
+ Author URI:   https://amparomedium.com
+ Template:     kadence
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  https://www.gnu.org/licenses/gpl-2.0.html
+ Text Domain:  amparomedium-kadence-child
+ Tags:         dark-mode, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, one-column, theme-options, translation-ready, blog, portfolio
+
+ AmparoMédium - Tema personalizado para servicios espirituales
+ Paleta: Púrpura místico (#9333ea), Fondo oscuro (#0f0a1f), Dorado (#fbbf24)
+*/
+
+/* ==========================================================================
+   IMPORTAR ESTILOS DEL TEMA PADRE (Kadence)
+   ========================================================================== */
+
+/* Los estilos del padre se cargan via functions.php */
+
+/* ==========================================================================
+   VARIABLES CSS GLOBALES - AMPAROMEDIUM
+   ========================================================================== */
+
+:root {
+    /* Colores principales */
+    --am-primary: #9333ea;
+    --am-primary-dark: #7c3aed;
+    --am-primary-light: #a855f7;
+    
+    /* Fondos */
+    --am-background: #0f0a1f;
+    --am-background-alt: #1a0f2e;
+    --am-background-card: rgba(15, 10, 31, 0.8);
+    
+    /* Textos */
+    --am-text: #ffffff;
+    --am-text-muted: #a8a29e;
+    --am-text-dark: #1a1a1a;
+    
+    /* Acentos */
+    --am-accent: #fbbf24;
+    --am-success: #22c55e;
+    --am-error: #ef4444;
+    
+    /* Bordes y sombras */
+    --am-border-color: rgba(147, 51, 234, 0.2);
+    --am-shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --am-shadow-md: 0 10px 25px rgba(147, 51, 234, 0.3);
+    --am-shadow-lg: 0 20px 40px rgba(147, 51, 234, 0.4);
+    
+    /* Espaciado */
+    --am-spacing-xs: 0.5rem;
+    --am-spacing-sm: 1rem;
+    --am-spacing-md: 1.5rem;
+    --am-spacing-lg: 2rem;
+    --am-spacing-xl: 3rem;
+    --am-spacing-2xl: 5rem;
+    
+    /* Bordes redondeados */
+    --am-radius-sm: 8px;
+    --am-radius-md: 12px;
+    --am-radius-lg: 16px;
+    --am-radius-xl: 20px;
+    --am-radius-full: 9999px;
+    
+    /* Transiciones */
+    --am-transition-fast: 0.2s ease;
+    --am-transition: 0.3s ease;
+    --am-transition-slow: 0.5s ease;
+}
+
+/* ==========================================================================
+   ESTILOS BASE
+   ========================================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--am-background);
+    color: var(--am-text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   TIPOGRAFÍA
+   ========================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--am-text);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--am-spacing-sm);
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+h3 {
+    font-size: clamp(1.5rem, 3vw, 1.75rem);
+}
+
+h4 {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+}
+
+/* Efecto gradiente en títulos */
+.am-gradient-text,
+h2.am-gradient {
+    background: linear-gradient(135deg, #ffffff 0%, var(--am-primary-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+p {
+    color: var(--am-text-muted);
+    line-height: 1.8;
+    margin-bottom: var(--am-spacing-sm);
+}
+
+a {
+    color: var(--am-primary);
+    text-decoration: none;
+    transition: var(--am-transition);
+}
+
+a:hover {
+    color: var(--am-primary-light);
+}
+
+/* ==========================================================================
+   HEADER / NAVEGACIÓN
+   ========================================================================== */
+
+.site-header {
+    background: transparent;
+    transition: var(--am-transition);
+}
+
+.site-header.header-scrolled {
+    background: rgba(15, 10, 31, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo */
+.custom-logo {
+    max-height: 60px;
+    transition: var(--am-transition);
+}
+
+/* Menú de navegación */
+.main-navigation a,
+.primary-menu a,
+#primary-navigation a {
+    color: var(--am-text);
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+    transition: var(--am-transition);
+    position: relative;
+}
+
+.main-navigation a::after,
+.primary-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--am-primary);
+    transition: var(--am-transition);
+    transform: translateX(-50%);
+}
+
+.main-navigation a:hover,
+.primary-menu a:hover {
+    color: var(--am-primary-light);
+}
+
+.main-navigation a:hover::after,
+.primary-menu a:hover::after {
+    width: 80%;
+}
+
+/* Menú móvil */
+.mobile-navigation {
+    background: var(--am-background);
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+
+.am-hero,
+.hero-section {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.am-hero::before,
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(15,10,31,0.5) 0%, rgba(15,10,31,0.9) 100%);
+    z-index: 1;
+}
+
+.am-hero-content,
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: var(--am-spacing-lg);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   BOTONES
+   ========================================================================== */
+
+.am-btn,
+.wp-block-button__link,
+.elementor-button,
+button[type="submit"],
+input[type="submit"] {
+    display: inline-block;
+    padding: 14px 32px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: var(--am-radius-sm);
+    cursor: pointer;
+    transition: var(--am-transition);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Botón primario */
+.am-btn-primary,
+.wp-block-button.is-style-fill .wp-block-button__link {
+    background: linear-gradient(135deg, var(--am-primary) 0%, var(--am-primary-dark) 100%);
+    color: #ffffff;
+    box-shadow: var(--am-shadow-md);
+}
+
+.am-btn-primary:hover {
+    background: linear-gradient(135deg, var(--am-primary-light) 0%, var(--am-primary) 100%);
+    transform: translateY(-2px);
+    box-shadow: var(--am-shadow-lg);
+    color: #ffffff;
+}
+
+/* Botón outline */
+.am-btn-outline,
+.wp-block-button.is-style-outline .wp-block-button__link {
+    background: transparent;
+    border: 2px solid var(--am-primary);
+    color: var(--am-primary);
+}
+
+.am-btn-outline:hover {
+    background: var(--am-primary);
+    color: #ffffff;
+}
+
+/* Botón dorado/acento */
+.am-btn-accent {
+    background: linear-gradient(135deg, var(--am-accent) 0%, #f59e0b 100%);
+    color: #000000;
+}
+
+.am-btn-accent:hover {
+    background: linear-gradient(135deg, #f59e0b 0%, var(--am-accent) 100%);
+}
+
+/* Efecto ripple en botones */
+.am-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.am-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* ==========================================================================
+   CARDS / TARJETAS
+   ========================================================================== */
+
+.am-card {
+    padding: var(--am-spacing-lg);
+    border: 1px solid var(--am-border-color);
+    border-radius: var(--am-radius-lg);
+    background: var(--am-background-card);
+    backdrop-filter: blur(10px);
+    transition: var(--am-transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.am-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(147, 51, 234, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.am-card:hover {
+    border-color: var(--am-primary);
+    transform: translateY(-8px);
+    box-shadow: var(--am-shadow-md);
+}
+
+.am-card:hover::before {
+    left: 100%;
+}
+
+/* Card de servicio */
+.am-service-card {
+    text-align: center;
+}
+
+.am-service-card .am-icon {
+    font-size: 3rem;
+    color: var(--am-primary);
+    margin-bottom: var(--am-spacing-md);
+    transition: var(--am-transition);
+}
+
+.am-service-card:hover .am-icon {
+    transform: scale(1.1) rotate(5deg);
+    color: var(--am-primary-light);
+}
+
+/* Card de producto */
+.am-product-card {
+    overflow: hidden;
+}
+
+.am-product-card .am-product-image {
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    border-radius: var(--am-radius-md);
+    margin-bottom: var(--am-spacing-md);
+}
+
+.am-product-card .am-product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--am-transition-slow);
+}
+
+.am-product-card:hover .am-product-image img {
+    transform: scale(1.1);
+}
+
+.am-product-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--am-primary);
+}
+
+.am-product-stock {
+    color: var(--am-success);
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   BADGES
+   ========================================================================== */
+
+.am-badge {
+    display: inline-block;
+    padding: 8px 20px;
+    background: var(--am-accent);
+    color: #000000;
+    border-radius: var(--am-radius-full);
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 10px rgba(251, 191, 36, 0.3);
+}
+
+.am-badge-primary {
+    background: var(--am-primary);
+    color: #ffffff;
+}
+
+.am-badge-success {
+    background: var(--am-success);
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   SECCIONES ESPECÍFICAS
+   ========================================================================== */
+
+/* Sección Sobre AmparoMédium */
+.am-about-section {
+    padding: var(--am-spacing-2xl) var(--am-spacing-lg);
+    background: linear-gradient(135deg, var(--am-background) 0%, var(--am-background-alt) 100%);
+    position: relative;
+}
+
+.am-about-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(circle at 20% 50%, rgba(147, 51, 234, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Sección Membresía */
+.am-membership-section {
+    padding: var(--am-spacing-2xl) var(--am-spacing-lg);
+    background: linear-gradient(135deg, var(--am-background-alt) 0%, var(--am-primary) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.am-membership-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    animation: am-rotate 20s linear infinite;
+}
+
+/* Pricing card */
+.am-pricing-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--am-radius-xl);
+    padding: var(--am-spacing-xl);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* CTA Final */
+.am-cta-section {
+    padding: var(--am-spacing-2xl) var(--am-spacing-lg);
+    background: linear-gradient(135deg, var(--am-primary) 0%, var(--am-primary-dark) 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.am-cta-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+}
+
+/* ==========================================================================
+   TESTIMONIOS
+   ========================================================================== */
+
+.am-testimonials-section {
+    padding: var(--am-spacing-2xl) var(--am-spacing-lg);
+    background: linear-gradient(135deg, var(--am-background) 0%, var(--am-background-alt) 100%);
+}
+
+.am-testimonial-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--am-border-color);
+    border-radius: var(--am-radius-xl);
+    padding: var(--am-spacing-xl);
+    backdrop-filter: blur(10px);
+    transition: var(--am-transition);
+}
+
+.am-testimonial-card:hover {
+    transform: scale(1.02);
+    box-shadow: var(--am-shadow-md);
+}
+
+.am-testimonial-text {
+    font-size: 1.125rem;
+    font-style: italic;
+    color: var(--am-text);
+    margin-bottom: var(--am-spacing-lg);
+    line-height: 1.8;
+    position: relative;
+}
+
+.am-testimonial-text::before {
+    content: '"';
+    font-size: 4rem;
+    color: var(--am-primary);
+    opacity: 0.3;
+    position: absolute;
+    top: -20px;
+    left: -10px;
+    line-height: 1;
+}
+
+.am-testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: var(--am-spacing-md);
+}
+
+.am-testimonial-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid var(--am-primary);
+    object-fit: cover;
+}
+
+.am-testimonial-name {
+    font-weight: 600;
+    color: var(--am-text);
+    margin: 0;
+}
+
+.am-testimonial-service {
+    color: var(--am-text-muted);
+    font-size: 0.875rem;
+}
+
+.am-testimonial-rating {
+    color: var(--am-accent);
+    font-size: 1.25rem;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+.site-footer,
+footer.site-footer {
+    background: linear-gradient(180deg, var(--am-background) 0%, #000000 100%);
+    padding: var(--am-spacing-2xl) var(--am-spacing-lg) var(--am-spacing-lg);
+    border-top: 1px solid var(--am-border-color);
+}
+
+.footer-widget-area {
+    color: var(--am-text-muted);
+}
+
+.footer-widget-area h3,
+.footer-widget-area h4,
+.widget-title {
+    color: var(--am-text);
+    font-size: 1.25rem;
+    margin-bottom: var(--am-spacing-md);
+}
+
+.footer-widget-area a {
+    color: var(--am-text-muted);
+    transition: var(--am-transition);
+}
+
+.footer-widget-area a:hover {
+    color: var(--am-primary);
+    transform: translateX(5px);
+}
+
+.footer-widget-area ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-widget-area li {
+    margin-bottom: var(--am-spacing-xs);
+}
+
+/* Copyright */
+.site-footer-bottom,
+.footer-copyright {
+    text-align: center;
+    padding: var(--am-spacing-lg) var(--am-spacing-lg);
+    border-top: 1px solid var(--am-border-color);
+    margin-top: var(--am-spacing-xl);
+    color: var(--am-text-muted);
+    font-size: 0.875rem;
+}
+
+/* ==========================================================================
+   FORMULARIOS
+   ========================================================================== */
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="number"],
+input[type="url"],
+textarea,
+select {
+    width: 100%;
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--am-border-color);
+    border-radius: var(--am-radius-sm);
+    color: var(--am-text);
+    font-size: 1rem;
+    transition: var(--am-transition);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--am-primary);
+    box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.2);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--am-text-muted);
+}
+
+label {
+    display: block;
+    color: var(--am-text);
+    font-weight: 500;
+    margin-bottom: var(--am-spacing-xs);
+}
+
+/* ==========================================================================
+   ICONOS
+   ========================================================================== */
+
+.am-icon {
+    color: var(--am-primary);
+    transition: var(--am-transition);
+}
+
+.am-icon:hover {
+    color: var(--am-primary-light);
+    transform: scale(1.1);
+}
+
+/* Icon list */
+.am-icon-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.am-icon-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--am-spacing-sm);
+    margin-bottom: var(--am-spacing-sm);
+    color: var(--am-text-muted);
+}
+
+.am-icon-list li::before {
+    content: '✓';
+    color: var(--am-primary);
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   IMÁGENES
+   ========================================================================== */
+
+.am-image-hover {
+    overflow: hidden;
+    border-radius: var(--am-radius-md);
+}
+
+.am-image-hover img {
+    transition: var(--am-transition-slow);
+}
+
+.am-image-hover:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* Imagen flotante (flor de loto) */
+.am-floating-image {
+    animation: am-float 3s ease-in-out infinite;
+}
+
+/* ==========================================================================
+   ANIMACIONES
+   ========================================================================== */
+
+@keyframes am-fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes am-fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes am-slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes am-slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes am-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes am-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+@keyframes am-rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes am-shimmer {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
+}
+
+/* Clases de animación */
+.am-animate-fadeInUp {
+    animation: am-fadeInUp 0.8s ease-out;
+}
+
+.am-animate-fadeIn {
+    animation: am-fadeIn 1s ease-out;
+}
+
+.am-animate-slideLeft {
+    animation: am-slideInLeft 0.8s ease-out;
+}
+
+.am-animate-slideRight {
+    animation: am-slideInRight 0.8s ease-out;
+}
+
+.am-animate-float {
+    animation: am-float 3s ease-in-out infinite;
+}
+
+.am-animate-pulse {
+    animation: am-pulse 2s ease-in-out infinite;
+}
+
+.am-shimmer {
+    animation: am-shimmer 2s infinite linear;
+    background: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(147, 51, 234, 0.2) 50%,
+        transparent 100%
+    );
+    background-size: 1000px 100%;
+}
+
+/* ==========================================================================
+   UTILIDADES
+   ========================================================================== */
+
+/* Texto */
+.am-text-center { text-align: center; }
+.am-text-left { text-align: left; }
+.am-text-right { text-align: right; }
+
+.am-text-primary { color: var(--am-primary); }
+.am-text-accent { color: var(--am-accent); }
+.am-text-muted { color: var(--am-text-muted); }
+.am-text-success { color: var(--am-success); }
+
+/* Fondos */
+.am-bg-dark { background-color: var(--am-background); }
+.am-bg-alt { background-color: var(--am-background-alt); }
+.am-bg-primary { background-color: var(--am-primary); }
+
+/* Márgenes */
+.am-mt-1 { margin-top: var(--am-spacing-xs); }
+.am-mt-2 { margin-top: var(--am-spacing-sm); }
+.am-mt-3 { margin-top: var(--am-spacing-md); }
+.am-mt-4 { margin-top: var(--am-spacing-lg); }
+.am-mt-5 { margin-top: var(--am-spacing-xl); }
+
+.am-mb-1 { margin-bottom: var(--am-spacing-xs); }
+.am-mb-2 { margin-bottom: var(--am-spacing-sm); }
+.am-mb-3 { margin-bottom: var(--am-spacing-md); }
+.am-mb-4 { margin-bottom: var(--am-spacing-lg); }
+.am-mb-5 { margin-bottom: var(--am-spacing-xl); }
+
+/* Padding */
+.am-p-1 { padding: var(--am-spacing-xs); }
+.am-p-2 { padding: var(--am-spacing-sm); }
+.am-p-3 { padding: var(--am-spacing-md); }
+.am-p-4 { padding: var(--am-spacing-lg); }
+.am-p-5 { padding: var(--am-spacing-xl); }
+
+/* Separador decorativo */
+.am-divider {
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--am-primary) 0%, var(--am-accent) 100%);
+    margin: var(--am-spacing-lg) auto;
+    border-radius: 2px;
+}
+
+/* Ocultar/mostrar */
+.am-hidden { display: none !important; }
+.am-visible { display: block !important; }
+
+/* ==========================================================================
+   GRADIENTES DECORATIVOS
+   ========================================================================== */
+
+.am-gradient-purple {
+    background: linear-gradient(135deg, var(--am-background) 0%, var(--am-background-alt) 50%, var(--am-primary) 100%);
+}
+
+.am-gradient-gold {
+    background: linear-gradient(135deg, var(--am-accent) 0%, #f59e0b 100%);
+}
+
+.am-overlay-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(15,10,31,0.6) 0%, rgba(15,10,31,0.9) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.am-overlay-dots {
+    background-image: radial-gradient(circle, rgba(147, 51, 234, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+/* ==========================================================================
+   WOOCOMMERCE OVERRIDES (si usas WooCommerce)
+   ========================================================================== */
+
+.woocommerce .products .product {
+    background: var(--am-background-card);
+    border: 1px solid var(--am-border-color);
+    border-radius: var(--am-radius-lg);
+    padding: var(--am-spacing-md);
+    transition: var(--am-transition);
+}
+
+.woocommerce .products .product:hover {
+    border-color: var(--am-primary);
+    transform: translateY(-5px);
+    box-shadow: var(--am-shadow-md);
+}
+
+.woocommerce .price {
+    color: var(--am-primary) !important;
+    font-weight: 700;
+}
+
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button {
+    background: linear-gradient(135deg, var(--am-primary) 0%, var(--am-primary-dark) 100%) !important;
+    color: #ffffff !important;
+    border-radius: var(--am-radius-sm) !important;
+}
+
+/* ==========================================================================
+   ELEMENTOR OVERRIDES (si usas Elementor)
+   ========================================================================== */
+
+.elementor-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.elementor-widget-icon-box .elementor-icon-box-wrapper {
+    padding: var(--am-spacing-lg);
+    border: 1px solid var(--am-border-color);
+    border-radius: var(--am-radius-lg);
+    background: var(--am-background-card);
+    backdrop-filter: blur(10px);
+    transition: var(--am-transition);
+}
+
+.elementor-widget-icon-box .elementor-icon-box-wrapper:hover {
+    border-color: var(--am-primary);
+    transform: translateY(-8px);
+    box-shadow: var(--am-shadow-md);
+}
+
+.elementor-icon {
+    color: var(--am-primary);
+}
+
+.elementor-button {
+    border-radius: var(--am-radius-sm);
+    transition: var(--am-transition);
+}
+
+.elementor-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--am-shadow-md);
+}
+
+/* ==========================================================================
+   KADENCE SPECIFIC OVERRIDES
+   ========================================================================== */
+
+/* Kadence header */
+.site-header-row {
+    background: transparent;
+}
+
+.header-desktop-inner-wrap {
+    padding: 0.5rem 0;
+}
+
+/* Kadence buttons */
+.kb-button,
+.kb-buttons .kb-button {
+    background: linear-gradient(135deg, var(--am-primary) 0%, var(--am-primary-dark) 100%);
+    border-radius: var(--am-radius-sm);
+    transition: var(--am-transition);
+}
+
+.kb-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--am-shadow-md);
+}
+
+/* Kadence blocks */
+.kb-row-layout-wrap {
+    background-color: var(--am-background);
+}
+
+.wp-block-kadence-column {
+    background-color: transparent;
+}
+
+/* ==========================================================================
+   ACCESIBILIDAD
+   ========================================================================== */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+*:focus-visible {
+    outline: 2px solid var(--am-primary);
+    outline-offset: 2px;
+}
+
+/* Reducir movimiento para usuarios que lo prefieren */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    :root {
+        --am-spacing-2xl: 4rem;
+    }
+    
+    .am-hero,
+    .hero-section {
+        min-height: 80vh;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    :root {
+        --am-spacing-2xl: 3rem;
+        --am-spacing-xl: 2rem;
+    }
+    
+    .am-btn,
+    .wp-block-button__link,
+    .elementor-button {
+        width: 100%;
+        margin-bottom: var(--am-spacing-xs);
+    }
+    
+    .am-card {
+        padding: var(--am-spacing-md);
+    }
+    
+    .am-testimonial-card {
+        padding: var(--am-spacing-md);
+    }
+    
+    .site-footer {
+        padding: var(--am-spacing-xl) var(--am-spacing-sm) var(--am-spacing-md);
+    }
+}
+
+/* Mobile pequeño */
+@media (max-width: 480px) {
+    .am-btn {
+        padding: 12px 24px;
+        font-size: 0.875rem;
+    }
+    
+    .am-badge {
+        font-size: 0.75rem;
+        padding: 6px 14px;
+    }
+    
+    .am-testimonial-text::before {
+        font-size: 3rem;
+        top: -15px;
+        left: -5px;
+    }
+}
+

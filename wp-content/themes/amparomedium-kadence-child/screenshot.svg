@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0a1f"/>
+      <stop offset="50%" style="stop-color:#1a0f2e"/>
+      <stop offset="100%" style="stop-color:#2a1545"/>
+    </linearGradient>
+    <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9333ea"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fbbf24"/>
+      <stop offset="100%" style="stop-color:#f59e0b"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="900" fill="url(#bgGradient)"/>
+  
+  <!-- Decorative circles -->
+  <circle cx="100" cy="100" r="200" fill="#9333ea" opacity="0.1"/>
+  <circle cx="1100" cy="800" r="300" fill="#9333ea" opacity="0.08"/>
+  <circle cx="600" cy="450" r="400" fill="#7c3aed" opacity="0.05"/>
+  
+  <!-- Stars decoration -->
+  <g fill="#fbbf24" opacity="0.6">
+    <circle cx="150" cy="200" r="2"/>
+    <circle cx="300" cy="150" r="1.5"/>
+    <circle cx="450" cy="100" r="2"/>
+    <circle cx="750" cy="120" r="1.5"/>
+    <circle cx="900" cy="180" r="2"/>
+    <circle cx="1050" cy="140" r="1.5"/>
+    <circle cx="200" cy="350" r="1"/>
+    <circle cx="1000" cy="300" r="1.5"/>
+  </g>
+  
+  <!-- Lotus flower symbol -->
+  <g transform="translate(600, 350)" filter="url(#glow)">
+    <!-- Lotus petals -->
+    <ellipse cx="0" cy="-30" rx="25" ry="60" fill="url(#purpleGradient)" transform="rotate(-30)"/>
+    <ellipse cx="0" cy="-30" rx="25" ry="60" fill="url(#purpleGradient)" transform="rotate(30)"/>
+    <ellipse cx="0" cy="-30" rx="25" ry="60" fill="url(#purpleGradient)" transform="rotate(-60)"/>
+    <ellipse cx="0" cy="-30" rx="25" ry="60" fill="url(#purpleGradient)" transform="rotate(60)"/>
+    <ellipse cx="0" cy="-35" rx="20" ry="50" fill="#a855f7" transform="rotate(-15)"/>
+    <ellipse cx="0" cy="-35" rx="20" ry="50" fill="#a855f7" transform="rotate(15)"/>
+    <ellipse cx="0" cy="-40" rx="15" ry="40" fill="#c084fc"/>
+    <!-- Center -->
+    <circle cx="0" cy="0" r="20" fill="url(#goldGradient)"/>
+  </g>
+  
+  <!-- Title -->
+  <text x="600" y="520" font-family="Georgia, serif" font-size="72" font-weight="bold" fill="white" text-anchor="middle">AmparoMédium</text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="570" font-family="Arial, sans-serif" font-size="24" fill="#a8a29e" text-anchor="middle">Kadence Child Theme</text>
+  
+  <!-- Tagline -->
+  <text x="600" y="620" font-family="Arial, sans-serif" font-size="18" fill="#9333ea" text-anchor="middle">Registros Akáshicos • Canalización • Videncia</text>
+  
+  <!-- Decorative line -->
+  <rect x="450" y="650" width="300" height="4" rx="2" fill="url(#purpleGradient)"/>
+  
+  <!-- Version badge -->
+  <g transform="translate(600, 720)">
+    <rect x="-60" y="-15" width="120" height="30" rx="15" fill="url(#goldGradient)"/>
+    <text x="0" y="5" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#000" text-anchor="middle">v1.0.0</text>
+  </g>
+  
+  <!-- Bottom decorative elements -->
+  <g fill="#9333ea" opacity="0.3">
+    <circle cx="400" cy="850" r="3"/>
+    <circle cx="500" cy="860" r="2"/>
+    <circle cx="600" cy="850" r="4"/>
+    <circle cx="700" cy="860" r="2"/>
+    <circle cx="800" cy="850" r="3"/>
+  </g>
+</svg>
+
